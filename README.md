@@ -33,6 +33,14 @@ RentStar is a decentralized application (dApp) designed to simplify rent and uti
 | Networks / RPC | Stellar Testnet Horizon & Soroban RPC |
 
 ---
+## Screenshots
+   1. wallet connect:
+      ![image alt](https://github.com/king3192/steller-level-2/blob/fe20467fc66f548f6f15d0aba3b533a034c99554/Screenshot%202026-06-12%20004423.png)
+   2. payment gui:
+      ![image alt](https://github.com/king3192/steller-level-2/blob/fe20467fc66f548f6f15d0aba3b533a034c99554/Screenshot%202026-06-12%20010327.png)
+   3. payment status:
+      ![iamge alt](https://github.com/king3192/steller-level-2/blob/fe20467fc66f548f6f15d0aba3b533a034c99554/Screenshot%202026-06-12%20014527.png)
+---
 
 ## 🚀 Getting Started
 
