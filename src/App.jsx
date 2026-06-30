@@ -14,10 +14,10 @@ import { useSendPayment } from './hooks/useSendPayment';
 import { usePayRent } from './hooks/usePayRent';
 import { useRoomManager } from './hooks/useRoomManager';
 import { useContractEvents } from './hooks/useContractEvents';
-import { 
-  fetchLandlord, 
-  fetchTotalRent, 
-  fetchTotalPaid, 
+import {
+  fetchLandlord,
+  fetchTotalRent,
+  fetchTotalPaid,
   fetchRentSplitContractAddress,
   fetchIsRoommate
 } from './utils/contract';
@@ -32,10 +32,10 @@ export function App() {
   const [totalRent, setTotalRent] = useState(0);
   const [totalPaid, setTotalPaid] = useState(0);
   const [linkedSplitAddress, setLinkedSplitAddress] = useState('');
-  
+
   // Roommates registry state
   const [roommates, setRoommates] = useState([]);
-  
+
   // Custom mock profile toggle for testing roles in Demo Mode
   const [mockRole, setMockRole] = useState('roommate'); // 'landlord' or 'roommate'
 
@@ -53,8 +53,8 @@ export function App() {
   } = useWalletKit();
 
   // Dynamically resolve active public key based on mock role selected
-  const publicKey = isMock 
-    ? (mockRole === 'landlord' ? MOCK_LANDLORD : MOCK_ROOMMATE_1) 
+  const publicKey = isMock
+    ? (mockRole === 'landlord' ? MOCK_LANDLORD : MOCK_ROOMMATE_1)
     : kitPublicKey;
 
   const {
@@ -106,7 +106,7 @@ export function App() {
       setLinkedSplitAddress('CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC');
       setTotalRent(1200);
       setTotalPaid(770);
-      
+
       // Default mock roommates list
       const savedRoommates = localStorage.getItem('rentstar_mock_roommates');
       if (savedRoommates) {
@@ -181,7 +181,7 @@ export function App() {
     });
 
     refetchBalance();
-    
+
     if (isMock) {
       // Simulate state updates inside state simulator
       const updated = roommates.map((rm) => {
@@ -369,11 +369,10 @@ export function App() {
                         setMockRole('roommate');
                         setPaymentMode('contract');
                       }}
-                      className={`px-3 py-1 text-[11px] font-bold rounded transition-colors ${
-                        mockRole === 'roommate' 
-                          ? 'bg-accent text-slate-950' 
+                      className={`px-3 py-1 text-[11px] font-bold rounded transition-colors ${mockRole === 'roommate'
+                          ? 'bg-accent text-slate-950'
                           : 'text-slate-400 hover:text-white'
-                      }`}
+                        }`}
                     >
                       Roommate
                     </button>
@@ -382,11 +381,10 @@ export function App() {
                         setMockRole('landlord');
                         setPaymentMode('admin');
                       }}
-                      className={`px-3 py-1 text-[11px] font-bold rounded transition-colors ${
-                        mockRole === 'landlord' 
-                          ? 'bg-accent text-slate-950' 
+                      className={`px-3 py-1 text-[11px] font-bold rounded transition-colors ${mockRole === 'landlord'
+                          ? 'bg-accent text-slate-950'
                           : 'text-slate-400 hover:text-white'
-                      }`}
+                        }`}
                     >
                       Landlord (Admin)
                     </button>
@@ -400,42 +398,39 @@ export function App() {
                   {isLandlord && (
                     <button
                       onClick={() => setPaymentMode('admin')}
-                      className={`flex-1 flex items-center justify-center gap-1.5 py-2.5 text-xs font-bold rounded-lg transition-all duration-350 ${
-                        paymentMode === 'admin'
+                      className={`flex-1 flex items-center justify-center gap-1.5 py-2.5 text-xs font-bold rounded-lg transition-all duration-350 ${paymentMode === 'admin'
                           ? 'bg-primary text-white shadow-md shadow-primary/10'
                           : 'text-appText-muted hover:text-white'
-                      }`}
+                        }`}
                     >
                       <Shield className="w-3.5 h-3.5" />
                       Landlord Panel
                     </button>
                   )}
-                  
+
                   <button
                     onClick={() => {
                       setPaymentMode('contract');
                       resetContractPayment();
                     }}
-                    className={`flex-1 flex items-center justify-center gap-1.5 py-2.5 text-xs font-bold rounded-lg transition-all duration-350 ${
-                      paymentMode === 'contract'
+                    className={`flex-1 flex items-center justify-center gap-1.5 py-2.5 text-xs font-bold rounded-lg transition-all duration-350 ${paymentMode === 'contract'
                         ? 'bg-primary text-white shadow-md shadow-primary/10'
                         : 'text-appText-muted hover:text-white'
-                    }`}
+                      }`}
                   >
                     <Layers className="w-3.5 h-3.5" />
                     Smart Contract Rent
                   </button>
-                  
+
                   <button
                     onClick={() => {
                       setPaymentMode('direct');
                       resetDirectPayment();
                     }}
-                    className={`flex-1 flex items-center justify-center gap-1.5 py-2.5 text-xs font-bold rounded-lg transition-all duration-350 ${
-                      paymentMode === 'direct'
+                    className={`flex-1 flex items-center justify-center gap-1.5 py-2.5 text-xs font-bold rounded-lg transition-all duration-350 ${paymentMode === 'direct'
                         ? 'bg-primary text-white shadow-md shadow-primary/10'
                         : 'text-appText-muted hover:text-white'
-                    }`}
+                      }`}
                   >
                     <Send className="w-3.5 h-3.5" />
                     Direct XLM
