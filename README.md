@@ -24,6 +24,18 @@ RentStar is a decentralized application (dApp) designed to simplify rent and uti
 
 ---
 
+## 🌐 Live Demo
+(https://steller-level-2.vercel.app/)
+
+## 📜 Testnet Deployment
+Contract ID:
+CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC
+
+Stellar Expert:
+https://stellar.expert/explorer/testnet/contract/CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC
+
+---
+
 ## ⚙️ Technology Stack
 
 | Layer | Technology |
@@ -43,6 +55,8 @@ RentStar is a decentralized application (dApp) designed to simplify rent and uti
       ![image alt](https://github.com/king3192/steller-level-2/blob/fe20467fc66f548f6f15d0aba3b533a034c99554/Screenshot%202026-06-12%20010327.png)
    3. payment status:
       ![iamge alt](https://github.com/king3192/steller-level-2/blob/fe20467fc66f548f6f15d0aba3b533a034c99554/Screenshot%202026-06-12%20014527.png)
+    4.Project Live(Vercel)
+      ![iamge alt](https://github.com/king3192/steller-level-2/blob/8a395dded72d59abc78294f8502d47e7bdc4a940/Screenshot%202026-06-30%20181905.png)
 ---
 
 ## 🚀 Getting Started
